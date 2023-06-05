@@ -1,0 +1,27 @@
+{% extends 'layouts/app.twig' %}
+{% block content %}
+<div class="profile-posts">
+      {% for post in posts %}
+      {% if posts.id == id %}
+<div class="post">
+        <div class="post-body">
+          <div class="code-block">
+            <pre><code class="{{ post.language }}">{{ post.code }}</code></pre>
+          </div>
+          <div class="post-description">{{ post.description }}</div>
+        </div>
+        <div class="post-footer">
+          <div class="likes"><span class="heart-icon"></span>{{ post.likes }} likes</div>
+          <div class="comments">
+            {% if post.comments_count > 0 %}
+              <a class="nodec" href="/post/{{ post.id }}/comments">{{ post.comments_count }} comments</a>
+            {% else %}
+              No comments
+            {% endif %}
+          </div>
+        </div>
+      </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+{% endblock %}

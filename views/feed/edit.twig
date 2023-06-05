@@ -1,0 +1,37 @@
+{% extends 'layouts/app.twig' %}
+
+{% block content %}
+  <link rel="stylesheet" href="/css/feed.css" />
+  <link rel="stylesheet" href="/css/profile.css" />
+  <div class="profile-container">
+    <div class="profile-header">
+      <img src="{{ session.user.profile_pic }}" alt="Profile Picture" class="profile-pic1" />
+      <div class="profile-details">
+        <h2 class="username">{{ session.user.username }}</h2>
+        <form class="widthhoi" action="/user/edit" method="POST" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" value="{{ session.user.full_name }}">
+          </div>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" value="{{ session.user.username }}">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+          </div>
+            <div class="form-group">
+            <label for="bio">Bio</label>
+            <textarea id="bio" name="bio">{{ session.user.bio }}</textarea>
+          </div>
+          <div class="form-group">
+            <label for="profile-pic">Profile Picture</label>
+            <input type="text" id="profilepic" name="profilepic" value="{{session.user.profile_pic}}">
+          </div>
+          <button type="submit" name="edit" class="btn-primary">Save Changes</button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

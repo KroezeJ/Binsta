@@ -1,0 +1,43 @@
+{% extends 'layouts/app.twig' %}
+
+{% block content %}
+  <link rel="stylesheet" href="/css/feed.css" />
+  <link rel="stylesheet" href="/css/profile.css" />
+  <div class="profile-container">
+    <div class="profile-header">
+      <img src="{{ user.userpic }}" alt="Profile Picture" class="profile-pic1" />
+      <div class="profile-details">
+        <h2 class="username">{{ user.username }}</h2>
+        <div class="bio">{{ user.bio }}</div>
+        <div class="full-name">{{ user.fullname }}</div>
+      {% if user.username == session.user.username %}
+        <div class="edit-profile">
+          <a href="/user/edit">Edit Profile</a>
+        </div>
+      {% endif %}
+      </div>
+    </div>
+    <div>
+      {% for post in posts %}
+        <div class="post">
+          <div class="post-body">
+            <div class="code-block">
+              <pre>
+                <code class="{{ post.language }}">{{ post.code }}</code>
+              </pre>
+            </div>
+            <div class="post-description">{{ post.description }}</div>
+          </div>
+          <div class="post-footer">
+            <div class="likes">
+              <span class="heart-icon"></span>{{ post.likes }} likes
+            </div>
+            <div class="comments">
+              <a class="nodec" href="/post/show?id={{ post.id }}">{{ post.comments_count }} comments</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'layouts/app.twig' %}
+{% block content %}
+  <div class="login-container">
+    <div class="logo">
+      <img src="/img/logo.png" alt="Instagram Logo" />
+    </div>
+    <form action="/user/login" method="post">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+      <button type="submit" name="login" class="btn-primary">Log In</button>
+      <div class="forgot-password">
+        <a href="#">Forgot Password?</a>
+      </div>
+      {% if invalid %}
+      <div class="alert alert-danger text-center mt-2" role="alert">Username or password invalid.</div>
+      {% endif %}
+    </form>
+    <div class="signup-link">
+      Don't have an account? <a href="../../user/register">Sign up</a>
+    </div>
+  </div>
+{% endblock %}

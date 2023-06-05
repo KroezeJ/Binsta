@@ -1,0 +1,98 @@
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+  
+  .profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+  }
+
+  .widthhoi {
+    min-width: 300px;
+  }
+  
+  
+  .profile-pic1 {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  
+  .profile-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .username {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .bio {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+  }
+  
+  .full-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .post {
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  .code-block {
+    background-color: #fafafa;
+    max-height: 500px;
+    overflow-x: auto;
+  }
+  
+  .post-description {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .post-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+  }
+  
+  .likes {
+    display: flex;
+    align-items: center;
+  }
+  
+  .likes::before {
+    content: '\2764';
+    margin-right: 5px;
+    color: red;
+  }
+
+  .edit-profile {
+    text-align: center;
+    padding: 5px 10px;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    width: 100px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #262626;
+  }

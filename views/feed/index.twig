@@ -1,0 +1,30 @@
+{% extends 'layouts/app.twig' %}
+
+{% block content %}
+    <link rel="stylesheet" href="/css/feed.css">
+  <div class="feed-container">
+    {% for post in posts %}
+      <div class="post">
+        <div class="post-header">
+          <a href="/user/profile?name={{post.username}}"><img src="{{ post.userpic }}" alt="Profile Picture" class="profile-pic"></a>
+          <span class="username"><a class="nodec text-dark" href="/user/profile?name={{post.username}}">{{ post.username }}</a></span>
+        </div>
+        <div class="post-body">
+          <div class="code-block">
+            <pre><code class="{{ post.language }}">{{ post.code }}</code></pre>
+          </div>
+          <div class="likes"><a class="nodec" href="/feed/like?id={{post.id}}">❤️</a>{{ post.likes }} likes</div>
+          <div class="post-description">{{ post.description }}</div>
+        </div>
+        <div class="post-footer">
+          <div class="postdate">
+            <span class="date-icon"></span>{{ post.posted_at }}
+          </div>
+          <div class="comments">
+              <a class="nodec" href="/post/show?id={{ post.id }}">{{ post.comments_count }} comments</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

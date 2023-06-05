@@ -1,0 +1,38 @@
+{% extends 'layouts/app.twig' %}
+
+{% block content %}
+  <link rel="stylesheet" href="/css/feed.css" />
+  <div class="feed-container">
+    <div class="post">
+      <div class="post-header">
+        <a href="/user/profile?name={{ user.username }}"><img src="{{ user.profile_pic }}" alt="Profile Picture" class="profile-pic" /></a>
+        <span class="username"><a class="nodec text-dark" href="/user/profile?name={{ user.username }}">{{ user.username }}</a></span>
+      </div>
+      <div class="post-body">
+        <div class="code-block">
+          <pre>
+            <code class="{{ post.language }}">{{ post.code }}</code>
+          </pre>
+        </div>
+          <div class="likes"><a class="nodec" href="/post/like?id={{post.id}}">❤️</a>{{ post.likes }} likes</div>
+        <div class="post-description"><strong><a class="nodec text-dark" href="/user/profile?name={{ comment.username }}">{{ user.username }}</a></strong> {{ post.description }}</div>
+        <div class="post-description">
+          {% for comment in comments %}
+            <p>
+              <strong><a class="nodec text-dark" href="/user/profile?name={{ comment.username }}">{{ comment.username }}</a></strong> {{ comment.content }}
+            </p>
+          {% endfor %}
+        </div>
+        <form method="POST">
+          <input class="new-comment" for="comment" name="comment" placeholder="Type new comment..." required/>
+          <input type="hidden" for="post_id" name="post_id" value="{{ post.id }}" />
+        </form>
+      </div>
+      <div class="post-footer">
+        <div class="postdate">
+          <span class="date-icon"></span>{{ post.posted_at }}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

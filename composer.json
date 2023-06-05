@@ -1,0 +1,10 @@
+{
+    "require": {
+        "twig/twig": "^3.0",
+        "gabordemooij/redbean": "dev-master"
+    },  
+    "autoload": {
+      "files": ["helpers.php", "controllers/FeedController.php", "controllers/UserController.php", "controllers/PostController.php"]
+    }
+  }
+  

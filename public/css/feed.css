@@ -1,0 +1,90 @@
+.post {
+    margin-bottom: 20px;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .post-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .img-nav{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+  
+  .username {
+    font-weight: bold;
+  }
+  
+  .post-body {
+    padding: 10px;
+  }
+  
+  .code-block {
+    background-color: #fafafa;
+    min-width: 400px;
+    max-height: 500px;
+    overflow-x: auto;
+  }
+  
+  .post-description {
+    margin-top: 10px;
+  }
+  
+  .post-footer {
+    padding: 10px;
+    font-size: 14px;
+    color: #8e8e8e;
+  }
+  
+  .likes {
+    margin-bottom: 5px;
+  }
+  
+  .comments {
+    color: #0095f6;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .comments::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background-color: #0095f6;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .comments:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+
+  .newpostform {
+    min-width: 800px;
+  }
+
+  .newpostcode {
+    height: 400px;
+  }
+
+  .new-comment {
+    border: none;
+  }
+
+  .new-comment:focus {
+    border: none;
+    outline: none;
+  }
